@@ -3,86 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Cool & Aesthetic Site</title>
-  <!-- Google Fonts -->
+  <title>Full Page Typewriter Animation</title>
+  <!-- Google Fonts for styling -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <!-- Link to the main CSS file -->
-  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* --------------------------------------------------
+       Reset & Box Sizing
+    ----------------------------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* --------------------------------------------------
+       Global Styles & Full-Page Layout
+    ----------------------------------------------------- */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f0f0f0;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      /* Container to center content */
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+
+    /* --------------------------------------------------
+       Typewriter Animation Styles
+    ----------------------------------------------------- */
+    .typewriter h1 {
+      font-size: 2.5rem;
+      overflow: hidden;                 /* Ensures text is clipped to create the typewriter effect */
+      border-right: 0.15em solid orange; /* Creates the cursor effect */
+      white-space: nowrap;              /* Prevents the text from wrapping */
+      margin: 0 auto;                   /* Centers the text */
+      letter-spacing: 0.15em;            /* Adjusts spacing between characters */
+      width: 0;                         /* Start with the text hidden */
+      animation: typing 4s steps(40, end) forwards, 
+                 blinkCursor 0.75s step-end infinite;
+    }
+
+    /* Keyframes for the typing effect */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* Keyframes for the blinking cursor effect */
+    @keyframes blinkCursor {
+      from, to { border-color: transparent; }
+      50% { border-color: orange; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Header & Navigation -->
-  <header class="header">
-    <nav class="navbar">
-      <a href="#" class="logo">MySite</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <!-- Hero Section with Typewriter Animation -->
-    <div class="hero">
-      <div class="typewriter">
-        <h1>Welcome to My Site!</h1>
-      </div>
-      <p>Experience the cool animations and modern design.</p>
+  <div class="container">
+    <div class="typewriter">
+      <h1>Welcome to My Full Page Animation!</h1>
     </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="section about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am a creative developer passionate about design and aesthetics. Welcome to my portfolio where you can explore my work and projects.
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <p>Check out some of my latest projects below.</p>
-      <div class="project-grid">
-        <div class="project-item">
-          <img src="https://via.placeholder.com/300" alt="Project 1" />
-          <h3>Project One</h3>
-          <p>A brief description of Project One.</p>
-        </div>
-        <div class="project-item">
-          <img src="https://via.placeholder.com/300" alt="Project 2" />
-          <h3>Project Two</h3>
-          <p>A brief description of Project Two.</p>
-        </div>
-        <div class="project-item">
-          <img src="https://via.placeholder.com/300" alt="Project 3" />
-          <h3>Project Three</h3>
-          <p>A brief description of Project Three.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>
-        If you'd like to get in touch, please email me at 
-        <a href="mailto:your-email@example.com">your-email@example.com</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 MySite. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Link to your JavaScript file (if needed) -->
-  <script src="js/script.js"></script>
+  </div>
 </body>
 </html>
