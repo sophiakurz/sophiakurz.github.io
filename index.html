@@ -3,40 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Pages Site</title>
+  <title>My Cool & Aesthetic Site</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to My GitHub Pages Site</h1>
-    <nav>
-      <ul>
+  <header class="header">
+    <nav class="navbar">
+      <a href="#" class="logo">MySite</a>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <div class="hero">
+      <h1>Welcome to My Aesthetic Site</h1>
+      <p>Experience a modern, cool, and sleek design.</p>
+    </div>
   </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>This is a basic GitHub Pages site built with HTML, CSS, and JavaScript.</p>
+  
+  <section id="about" class="section about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm a creative developer passionate about design and aesthetics. This site is a showcase of my style and approach to web design.
+      </p>
+    </div>
   </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Here you can showcase some of your projects.</p>
+  
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <p>
+        Explore my work and discover how creativity meets functionality.
+      </p>
+      <div class="project-grid">
+        <div class="project-item">
+          <img src="https://via.placeholder.com/300" alt="Project 1" />
+          <h3>Project One</h3>
+          <p>A brief description of Project One.</p>
+        </div>
+        <div class="project-item">
+          <img src="https://via.placeholder.com/300" alt="Project 2" />
+          <h3>Project Two</h3>
+          <p>A brief description of Project Two.</p>
+        </div>
+        <div class="project-item">
+          <img src="https://via.placeholder.com/300" alt="Project 3" />
+          <h3>Project Three</h3>
+          <p>A brief description of Project Three.</p>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+  
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>
+        Let's get in touch! Email me at 
+        <a href="mailto:your-email@example.com">your-email@example.com</a>
+      </p>
+    </div>
   </section>
-
-  <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 MySite. All rights reserved.</p>
+    </div>
   </footer>
-
+  
   <script src="js/script.js"></script>
 </body>
 </html>
