@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Full Page Typewriter Animation</title>
+  <title>Typewriter Animation Transition</title>
   <!-- Google Fonts for styling -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
@@ -17,23 +17,35 @@
     }
 
     /* --------------------------------------------------
-       Global Styles & Full-Page Layout
+       Global Styles
     ----------------------------------------------------- */
     body {
       font-family: 'Montserrat', sans-serif;
       background: #f0f0f0;
       color: #333;
+    }
+
+    /* Utility class to hide elements */
+    .hidden {
+      display: none;
+    }
+
+    /* --------------------------------------------------
+       Full-Page Animation Container
+    ----------------------------------------------------- */
+    .animation-container {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background: #f0f0f0;
       text-align: center;
+      transition: opacity 1s ease-out;
     }
 
-    .container {
-      /* Container to center content */
-      max-width: 800px;
-      padding: 0 1rem;
+    /* Class to fade out the container */
+    .fade-out {
+      opacity: 0;
     }
 
     /* --------------------------------------------------
@@ -41,12 +53,12 @@
     ----------------------------------------------------- */
     .typewriter h1 {
       font-size: 2.5rem;
-      overflow: hidden;                 /* Ensures text is clipped to create the typewriter effect */
-      border-right: 0.15em solid orange; /* Creates the cursor effect */
-      white-space: nowrap;              /* Prevents the text from wrapping */
-      margin: 0 auto;                   /* Centers the text */
-      letter-spacing: 0.15em;            /* Adjusts spacing between characters */
-      width: 0;                         /* Start with the text hidden */
+      overflow: hidden;                   /* Ensures text is clipped for the typewriter effect */
+      border-right: 0.15em solid orange;  /* Creates the cursor effect */
+      white-space: nowrap;                /* Prevents text wrapping */
+      margin: 0 auto;
+      letter-spacing: 0.15em;
+      width: 0;                           /* Start hidden */
       animation: typing 4s steps(40, end) forwards, 
                  blinkCursor 0.75s step-end infinite;
     }
@@ -57,18 +69,49 @@
       to { width: 100%; }
     }
 
-    /* Keyframes for the blinking cursor effect */
+    /* Keyframes for the blinking cursor */
     @keyframes blinkCursor {
       from, to { border-color: transparent; }
       50% { border-color: orange; }
     }
+
+    /* --------------------------------------------------
+       Main Content Styles
+    ----------------------------------------------------- */
+    .main-content {
+      padding: 2rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <!-- Animation Container: This covers the full viewport and shows the typewriter animation -->
+  <div class="animation-container" id="animationContainer">
     <div class="typewriter">
-      <h1>Welcome!</h1>
+      <h1>Welcome to My Site!</h1>
     </div>
   </div>
+  
+  <!-- Main Content: Initially hidden until the animation completes -->
+  <div class="main-content hidden" id="mainContent">
+    <h2>Main Site Content</h2>
+    <p>This is the rest of your website. Now you can navigate or explore further!</p>
+  </div>
+
+  <script>
+    // Set a timeout to transition from the animation to the main content.
+    // Adjust the delays to match your animation duration.
+    setTimeout(function(){
+      // Fade out the animation container
+      var animationContainer = document.getElementById('animationContainer');
+      animationContainer.classList.add('fade-out');
+
+      // After the fade-out transition, hide the animation container and show the main content.
+      setTimeout(function(){
+        animationContainer.style.display = 'none';
+        document.getElementById('mainContent').classList.remove('hidden');
+      }, 1000); // Wait 1s for the fade-out transition to complete
+    }, 4500); // Wait 4.5s (assuming the typewriter animation runs for about 4s)
+  </script>
 </body>
 </html>
