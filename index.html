@@ -3,115 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Typewriter Animation Transition</title>
-  <!-- Google Fonts for styling -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    /* --------------------------------------------------
-       Reset & Box Sizing
-    ----------------------------------------------------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* --------------------------------------------------
-       Global Styles
-    ----------------------------------------------------- */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #f0f0f0;
-      color: #333;
-    }
-
-    /* Utility class to hide elements */
-    .hidden {
-      display: none;
-    }
-
-    /* --------------------------------------------------
-       Full-Page Animation Container
-    ----------------------------------------------------- */
-    .animation-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f0f0f0;
-      text-align: center;
-      transition: opacity 1s ease-out;
-    }
-
-    /* Class to fade out the container */
-    .fade-out {
-      opacity: 0;
-    }
-
-    /* --------------------------------------------------
-       Typewriter Animation Styles
-    ----------------------------------------------------- */
-    .typewriter h1 {
-      font-size: 2.5rem;
-      overflow: hidden;                   /* Ensures text is clipped for the typewriter effect */
-      border-right: 0.15em solid orange;  /* Creates the cursor effect */
-      white-space: nowrap;                /* Prevents text wrapping */
-      margin: 0 auto;
-      letter-spacing: 0.15em;
-      width: 0;                           /* Start hidden */
-      animation: typing 4s steps(40, end) forwards, 
-                 blinkCursor 0.75s step-end infinite;
-    }
-
-    /* Keyframes for the typing effect */
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    /* Keyframes for the blinking cursor */
-    @keyframes blinkCursor {
-      from, to { border-color: transparent; }
-      50% { border-color: orange; }
-    }
-
-    /* --------------------------------------------------
-       Main Content Styles
-    ----------------------------------------------------- */
-    .main-content {
-      padding: 2rem;
-      text-align: center;
-    }
-  </style>
+  <title>Your Name - Portfolio</title>
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Optionally, include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
-  <!-- Animation Container: This covers the full viewport and shows the typewriter animation -->
-  <div class="animation-container" id="animationContainer">
-    <div class="typewriter">
-      <h1>Welcome to My Site!</h1>
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h1>Hi, I'm [Your Name]</h1>
+    <p>I’m a [Your Profession] passionate about [Your Passion].</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Write a brief bio about yourself, your skills, and your experience.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <!-- Showcase your projects here -->
+    <div class="project">
+      <h3>Project Title</h3>
+      <p>Description of the project.</p>
     </div>
-  </div>
-  
-  <!-- Main Content: Initially hidden until the animation completes -->
-  <div class="main-content hidden" id="mainContent">
-    <h2>Main Site Content</h2>
-    <p>This is the rest of your website. Now you can navigate or explore further!</p>
-  </div>
+    <!-- Add more project divs as needed -->
+  </section>
 
-  <script>
-    // Set a timeout to transition from the animation to the main content.
-    // Adjust the delays to match your animation duration.
-    setTimeout(function(){
-      // Fade out the animation container
-      var animationContainer = document.getElementById('animationContainer');
-      animationContainer.classList.add('fade-out');
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me via email at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+  </section>
 
-      // After the fade-out transition, hide the animation container and show the main content.
-      setTimeout(function(){
-        animationContainer.style.display = 'none';
-        document.getElementById('mainContent').classList.remove('hidden');
-      }, 1000); // Wait 1s for the fade-out transition to complete
-    }, 4500); // Wait 4.5s (assuming the typewriter animation runs for about 4s)
-  </script>
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
 </body>
 </html>
